@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE=predict.c
+SOURCE=pcris.c
 clear
 gcc -o pcris $SOURCE
 
