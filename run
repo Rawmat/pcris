@@ -1,0 +1,10 @@
+#! /bin/sh
+
+# compile
+gcc -g -Wall -lm pcris1.c 2> log && ./a.out
+
+
+
+
+
+
