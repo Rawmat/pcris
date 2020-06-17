@@ -1,10 +1,8 @@
-#! /bin/sh
+#!/bin/bash
 
-# compile
-gcc -g -Wall -lm pcris1.c 2> log && ./a.out
+SOURCE=predict.c
+clear
+gcc -o pcris $SOURCE
 
-
-
-
-
+./pcris
 
