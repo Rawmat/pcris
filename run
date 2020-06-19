@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SOURCE=pcris.c
+SOURCE=nn6.c
 clear
-gcc -o pcris $SOURCE
+gcc -o nn6 $SOURCE
 
-./pcris
+./nn6
 

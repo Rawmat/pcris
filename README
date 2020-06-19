@@ -4,6 +4,13 @@
 * Hacking Deep Learning
 Reference - Book "Grokking Deep Lerning"
 
+Per sperimentare usare 'bc'
+
+Per fare grafici da console usare 'gnuplot'
+compilato da source con 
+...
+./configure --without-x --without-cairo --without-qt
+usare 'set terminal dumb' per fare grafici ascii su console
 
 
 
