@@ -8,7 +8,7 @@ To graph it use 'gnuplot'
 Compile from source (no X)
 ...
 ./configure --without-x --without-cairo --without-qt
-usare 'set terminal dumb' per fare grafici ascii su console
+use 'set terminal dumb' to make ASCII graphs on the console
 
 
 
