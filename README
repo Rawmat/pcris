@@ -1,43 +1,77 @@
 Reference - Book "Grokking Deep Lerning"
+========================================
 
-Experimenting algorithm for deep learning using the above book as reference
-Using C because Python indentation syntax is not acceptable
+Sperimentazione di algoritmi per deep lerning usando il libro
+suddetto. Usando il C e non python !
 
-I use it on the Linux console
-
-To graph it use 'gnuplot'
-Compile from source (no X)
-...
-./configure --without-x --without-cairo --without-qt
-use 'set terminal dumb' to make ASCII graphs on the console
+Per fare grafici con 'gnuplot', compilare da sorgente (no X)
+    ./configure --without-x --without-cairo --without-qt
+    usare
+    set terminal dumb' per fare grafici da console usando ASCII.
 
 
+APPUNTI LIBRO
+=============
 
-BRAINSTORM
-==========
+Il deep learning è un sottoinsieme di machine learning che a sua volta
+fa parte della Intelligenza Artificiale.  Il deep learning fa uso
+della tecnologia delle reti neurali.  Due tipi di reti neurali,
+supervised e non supervised. Si prende in esame solo il tipo
+supervised
 
-	SIX DATASETS
-	
-	INPUTS		GOALS	LEARN
-	-----------------------------
-	1  0  1		0	- / -
-	0  1  1		1	/ + +
-	0  0  1		0	/ / -
-	1  1  1		1	+ + +
-	0  1  1		1	/ + +
-	1  0  1		0	- / -
+Nel modo supervised, si hanno un vettore
+di dataset in ingresso (input) e un vettore di dataset in uscita
+(goal). Lo scopo è quello di insegnare alla rete neurale dati gli
+inputs dare come risultato gli outputs. Per fare questo usa delle
+manopole di regolazione (pesi). C'è una fase di learning in cui la
+rete dati gli inputs si regola (learn) tramite i knob da restituire
+gli outputs.
 
-   	      			1 3 0
-				- +
+3 Passi :
+- Prediction - gli input vengono sottoposti alla rete
+- Compare - il risultato della rete viene elaborato e confrontato
+con il rispettivo goal, (corrispondente a tale input). Viene caloclata
+la differenza fra il risultato elaborato dalla rete ed il goal che ci
+si aspetta (che deve essere appreso).
+- Learn - la differenza (errore), determina la regolazione
+calcolata degli knobs (pesi) in funzione dell'errore rilevato e
+dall'entita degli inputs.
+In pratica la rete neurale ricava l'approssimazioe di una funzione con
+piu parametri.
+Ripetizione del ciclo suddetto
 
+Esempi di appliazione di apprendimento:
+-Dati le quotazioni di borsa di tutti i lunedi per dieci anni e come
+risultati le quotazioni di borsa di tutti i martedi.
+-Dati i film che ho visto e come risultato quelli che mi piacciono.
 
-
-   
-
-
-
-
-
-
-
-
+Dettaglio incrementale della struttura di una rete neurale (come dal
+libro). Esame del passo di prediction.
+La piu semplice rete neurale è composta da input, peso, output.
+L'input è un dato misurabile e conosciuto della realta, ad esempio una
+temperatura, l'altezza di un oggetto, il colore di oggetto, il prezzo
+di una azione, etc.
+Il peso è un numero che viene moltiplicato all'input per scalarlo.
+La moltiplicazione dell'input con il peso restituisce l'ouput (prediction).
+Questo costituisce la prediction dato l'input (informazione) ed il
+peso (conoscenza). L'input è l'informazione data che si conosce, il
+peso è la conoscenza allo stato attuale (il peso scala l'input e
+quindi il contributo  di questo per la prediction).
+Il peso scala arbitrariamente l'input. In sostanza se la prediction è
+piu alta del goal, il peso puo essere ridotto, e viceversa cosi da
+ottenere un avvicinamento della prediction al goal; in questo modo la
+rete (seppure di base) apprende. Il peso agisce sull'input come una
+manopla del volume.
+Un unico input (feature), ragionevolmente non può fornire una
+prediction attendibile. Sarebbe come prevedere la vittoria (0/1 goal)
+di una squadra di calcio fornendo come input solo una informazione
+(input) ad esempio "numero di goal fatti finora". Anche nella realta
+valutata dal buonsenso, l'informazione costituita da un solo input non
+è completa per una casistica.
+In questo caso con un solo input si ha una prediction singola di un
+solo input. Di conseguenza l'evoluzione della rete neurale iniziale
+con un solo input pesato, si evolve ad una rete composta da piu input
+(dati conosciuti, features), ognuno scalato con il proprio peso.
+Si ottiengono cosi piu input scalati (ognuno contribuisce con il
+proprio peso che lo scala) che ragionevolmente devono venire sommati
+per restituire l'ouput (prediction).

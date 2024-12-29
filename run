@@ -1,8 +1,9 @@
 #!/bin/bash
 
-SOURCE=nn6.c
+PROG=nn6
 clear
-gcc -o nn6 $SOURCE
+gcc -o $PROG $PROG.c
 
-./nn6
+./$PROG
+
 
